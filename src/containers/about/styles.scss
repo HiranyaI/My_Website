@@ -22,6 +22,7 @@
 
       h3.personal_information_header_text {
         padding-top: 20px;
+        padding-bottom: 10px;
       }
 
       p {
@@ -56,6 +57,7 @@
     }
 
     &_services_wrapper {
+        padding-top: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
