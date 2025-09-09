@@ -1,96 +1,112 @@
-.navbar{
-    background-color: #F5F5DC;
-    height: 80px;
+.navbar {
+  background-color: #f5f5dc;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &_container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
+    width: 100%;
+    height: inherit;
+    padding: 0px 20px;
+    flex: 1;
+    justify-content: space-between;
 
-    &_container{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: inherit;
-        padding: 0px 20px;
-        flex: 1;
-
-        &_logo{
-            color: #776859;
-            cursor: pointer;
-        }
-
-        &_menu{
-            display:flex;
-            list-style: none;
-            text-align: center;
-
-            &_item{
-                line-height: 40px;
-                margin-right: 1.5rem;
-                font-size: 1.6rem;
-
-                &::after{
-                    content: '';
-                    display:block;
-                    height: 3px;
-                    width: 0;
-                    background: transparent;
-                    transition: all 0.5s ease;
-                }
-
-                &:hover::after{
-                    width: 100%;
-                    background: #964B00;
-                }
-
-                &_links{
-                    color: #776859;
-                    text-decoration: none;
-                    padding: 0.5rem;
-                }
-            }
-        }
-    }
-}
-
-.nav-icon{
-    display: none;
-}
-
-@media only screen and (max-width:768px){
-    .navbar_container_menu{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        position: absolute;
-        top: 80px;
-        left: -110%;
-        opacity: 1;
-        transition: all 0.5s ease;
-
-        &.active{
-            background: #181818;
-            left: 0px;
-            opacity: 1;
-        }
-
-        &_item{
-            border-bottom: 1px solid #282828;
-            margin:0px;
-            padding:20px 0px;
-        }
-    }
-    
-    .nav-icon{
-        display: block;
-        cursor: pointer;
-        color: var(--yellow--theme-main-color);
-        padding-right: 20px;
-
+    &_logo {
+      color: #776859;
+      cursor: pointer;
     }
 
+    &_menu {
+      display: flex;
+      list-style: none;
+      text-align: center;
+
+      &_item {
+        line-height: 40px;
+        margin-right: 1.5rem;
+        font-size: 1.6rem;
+
+        &::after {
+          content: "";
+          display: block;
+          height: 3px;
+          width: 0;
+          background: transparent;
+          transition: all 0.5s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+          background: #964b00;
+        }
+
+        &_links {
+          color: #776859;
+          text-decoration: none;
+          padding: 0.5rem;
+          display: block;
+        }
+      }
+    }
+  }
 }
 
+.nav-icon {
+  display: none;
+}
 
+@media only screen and (max-width: 768px) {
+  .navbar_container_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; // center links in mobile
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -110%; // hidden by default
+    background: #181818;
+    transition: all 0.5s ease;
+    z-index: 999;
+  }
+
+  .navbar_container_menu.active {
+    left: 0; // slide-in effect
+  }
+
+  .navbar_container_menu_item {
+    border-bottom: 1px solid #282828;
+    margin: 0;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+
+    .navbar_container_menu_item_links {
+      color: #776859; // white text on dark bg
+      text-decoration: none;
+      font-size: 1.6rem;
+      display: block;
+      width: 100%;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #222;
+      }
+    }
+  }
+
+  .nav-icon {
+    display: block;
+    cursor: pointer;
+    color: #776859; // or var(--yellow--theme-main-color)
+    padding-right: 20px;
+    z-index: 1000; // keep on top of menu
+  }
+}
