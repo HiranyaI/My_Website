@@ -71,7 +71,7 @@
         transition: all 0.5s ease;
 
         &.active{
-            background: #F5F5DC;
+            background: #181818;
             left: 0px;
             opacity: 1;
         }
@@ -86,10 +86,11 @@
     .nav-icon{
         display: block;
         cursor: pointer;
-        color: #F5F5DC;
+        color: var(--yellow--theme-main-color);
         padding-right: 20px;
 
     }
 
 }
+
 
