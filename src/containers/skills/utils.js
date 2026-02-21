@@ -37,7 +37,7 @@ export const skillsData =[
             },
             {
                 skillName:"Python",
-                percentage:"60",
+                percentage:"70",
             },
             {
                 skillName:"C#",
@@ -57,7 +57,7 @@ export const skillsData =[
         label:"DATABASES",
         data:[
             {
-                skillName:"MYSQL",
+                skillName:"SQL",
                 percentage:"80",
             },
             {
@@ -74,4 +74,5 @@ export const skillsData =[
             },
         ]
     },
+
 ]
